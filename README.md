@@ -95,11 +95,11 @@ Este proyecto es una plataforma de bolsa de trabajo desarrollada como parte de l
   - Indicador visual para el enlace activo.
 - **Página de Inicio del Panel (`/admin/dashboard`):**
   - Muestra una bienvenida y tarjetas de resumen (placeholders para estadísticas).
-- **Gestión de Ofertas de Trabajo (`/admin/manage-jobs`):
+- \*\*Gestión de Ofertas de Trabajo (`/admin/manage-jobs`):
   - **Listado de Ofertas:** Muestra las ofertas en `JobOffersDataTable` con acciones (Ver Detalles, Editar, Eliminar - simuladas).
   - **Crear Nueva Oferta (`/admin/manage-jobs/new`):** Formulario (`JobOfferForm`) para crear nuevas ofertas con validación (Zod) y campos detallados (nombre, empresa, descripciones, requisitos, modalidad, salario, fecha límite, etc.).
   - **Editar Oferta (`/admin/manage-jobs/[id]/edit`):** Reutiliza `JobOfferForm` para modificar ofertas existentes, precargando los datos.
-- **Página de Configuración (`/admin/settings`):
+- \*\*Página de Configuración (`/admin/settings`):
   - Permite gestionar la configuración del perfil de usuario administrador y la información de la empresa.
   - **Sección "Perfil de Usuario":** Campos para nombres, apellidos y correo electrónico del administrador.
   - **Sección "Información de la Empresa":** Campos para nombre de la empresa, descripción, ubicación, sitio web, teléfono y persona de contacto de RH.
