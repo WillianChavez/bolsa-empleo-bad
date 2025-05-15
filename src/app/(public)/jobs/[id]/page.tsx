@@ -193,10 +193,7 @@ export default function JobDetailPage() {
             jobOffer.conocimientos_requeridos,
             'Conocimientos Requeridos'
           )}
-          {renderListItems(
-            jobOffer.perfil_academico,
-            'Perfil Académico'
-          )}
+          {renderListItems(jobOffer.perfil_academico, 'Perfil Académico')}
           {renderListItems(
             jobOffer.habilidades_requeridas,
             'Habilidades Requeridas'
@@ -228,4 +225,4 @@ export default function JobDetailPage() {
       </Card>
     </div>
   )
-} 
+}

@@ -1,8 +1,14 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 
 export default function AdminDashboardPage() {
   return (
-    <div className="space-y-6">
+    <div className='space-y-6'>
       <Card>
         <CardHeader>
           <CardTitle>Admin Dashboard</CardTitle>
@@ -12,24 +18,26 @@ export default function AdminDashboardPage() {
         </CardHeader>
         <CardContent>
           <p>
-            Desde aquí podrás gestionar las ofertas de trabajo, visualizar estadísticas (próximamente),
-            y administrar otros aspectos de la plataforma.
+            Desde aquí podrás gestionar las ofertas de trabajo, visualizar
+            estadísticas (próximamente), y administrar otros aspectos de la
+            plataforma.
           </p>
-          <p className="mt-4">
-            Utiliza la barra de navegación lateral para acceder a las diferentes secciones.
+          <p className='mt-4'>
+            Utiliza la barra de navegación lateral para acceder a las diferentes
+            secciones.
           </p>
         </CardContent>
       </Card>
 
       {/* Placeholder for future widgets or stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
         <Card>
           <CardHeader>
             <CardTitle>Ofertas Activas</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold">0</p> {/* Placeholder value */}
-            <p className="text-xs text-muted-foreground">
+            <p className='text-2xl font-bold'>0</p> {/* Placeholder value */}
+            <p className='text-muted-foreground text-xs'>
               Total de ofertas de trabajo publicadas.
             </p>
           </CardContent>
@@ -39,8 +47,8 @@ export default function AdminDashboardPage() {
             <CardTitle>Nuevos Postulantes</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold">0</p> {/* Placeholder value */}
-            <p className="text-xs text-muted-foreground">
+            <p className='text-2xl font-bold'>0</p> {/* Placeholder value */}
+            <p className='text-muted-foreground text-xs'>
               Registrados en la última semana.
             </p>
           </CardContent>
@@ -50,13 +58,13 @@ export default function AdminDashboardPage() {
             <CardTitle>Empresas Registradas</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold">0</p> {/* Placeholder value */}
-            <p className="text-xs text-muted-foreground">
+            <p className='text-2xl font-bold'>0</p> {/* Placeholder value */}
+            <p className='text-muted-foreground text-xs'>
               Total de empresas en la plataforma.
             </p>
           </CardContent>
         </Card>
       </div>
     </div>
-  );
-} 
+  )
+}

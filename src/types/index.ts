@@ -44,5 +44,5 @@ export interface JobOfferViewModel {
   experiencia_requerida?: string
   perfil_academico?: string
   ubicacion?: string
-  estado_oferta?: "Borrador" | "Activa" | "Pausada"
+  estado_oferta?: 'Borrador' | 'Activa' | 'Pausada'
 }
