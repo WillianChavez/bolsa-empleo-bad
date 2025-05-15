@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,8 +9,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ChevronDown, UserPlus, Building2 } from 'lucide-react'; // UserPlus for general register, Building2 for company
+} from '@/components/ui/dropdown-menu'
+import { ChevronDown, UserPlus, Building2 } from 'lucide-react' // UserPlus for general register, Building2 for company
 // import { useRouter } from 'next/navigation'; // Keep if more complex logic is needed before navigation
 
 export const Navbar = () => {
@@ -27,17 +27,19 @@ export const Navbar = () => {
   // };
 
   // TODO: Define actual navigation paths for registration
-  const applicantRegisterPath = '/register/applicant';
-  const companyRegisterPath = '/register/company';
+  const applicantRegisterPath = '/register/applicant'
+  const companyRegisterPath = '/register/company'
 
   return (
-    <nav className='bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50'> {/* Made navbar sticky and white */}
+    <nav className='sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm'>
+      {' '}
+      {/* Made navbar sticky and white */}
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-16'>
+        <div className='flex h-16 items-center justify-between'>
           <div className='flex items-center'>
-            <Link 
-              href='/' 
-              className='text-2xl font-bold text-blue-700 hover:text-blue-800 transition-colors'
+            <Link
+              href='/'
+              className='text-2xl font-bold text-blue-700 transition-colors hover:text-blue-800'
             >
               Bolsa de Empleo UES
             </Link>
@@ -51,23 +53,26 @@ export const Navbar = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant='default' className='bg-blue-600 hover:bg-blue-700 text-white'>
+                <Button
+                  variant='default'
+                  className='bg-blue-600 text-white hover:bg-blue-700'
+                >
                   Registrarse
-                  <ChevronDown className="ml-2 h-4 w-4" />
+                  <ChevronDown className='ml-2 h-4 w-4' />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuContent align='end' className='w-56'>
                 <DropdownMenuLabel>Crear una cuenta como</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                  <Link href={applicantRegisterPath} className="cursor-pointer">
-                    <UserPlus className="mr-2 h-4 w-4" />
+                  <Link href={applicantRegisterPath} className='cursor-pointer'>
+                    <UserPlus className='mr-2 h-4 w-4' />
                     <span>Postulante</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href={companyRegisterPath} className="cursor-pointer">
-                    <Building2 className="mr-2 h-4 w-4" />
+                  <Link href={companyRegisterPath} className='cursor-pointer'>
+                    <Building2 className='mr-2 h-4 w-4' />
                     <span>Empresa / RH</span>
                   </Link>
                 </DropdownMenuItem>
@@ -77,5 +82,5 @@ export const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-}; 
+  )
+}
