@@ -1,18 +1,17 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import './globals.css'
-import { Navbar } from '@/components/navbar'
-import { Toaster } from 'sonner'
+// Navbar and Toaster are removed from here
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+// const geistMono = Geist_Mono({ // Still commented out due to previous error
+//   variable: '--font-geist-mono',
+//   subsets: ['latin'],
+// })
 
 export const metadata: Metadata = {
   title: 'Bolsa de Empleo - UES',
@@ -27,14 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='es' className='h-full'>
+      {/* className still includes geistSans.variable, geistMono.variable is commented out */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col font-sans antialiased`}
+        className={`${geistSans.variable} flex min-h-screen flex-col font-sans antialiased`}
       >
-        <Navbar />
-        <main className='container mx-auto flex-grow px-4 py-8 sm:px-6 lg:px-8'>
-          {children}
-        </main>
-        <Toaster richColors closeButton position='top-right' />
+        {/* Children will be the content from route group layouts */}
+        {children}
       </body>
     </html>
   )

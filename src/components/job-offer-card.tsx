@@ -59,7 +59,7 @@ export const JobOfferCard: React.FC<JobOfferCardProps> = ({ jobOffer }) => {
         </p>
         <div className='flex items-center pt-2 text-gray-600'>
           <Briefcase className='mr-2 h-4 w-4 text-blue-600' />
-          <span>{jobOffer.modalidad.nombre_modalidad}</span>
+          <span>{jobOffer.modalidad_trabajo.nombre_modalidad}</span>
         </div>
         <div className='flex items-center text-gray-600'>
           <MapPin className='mr-2 h-4 w-4 text-red-600' />
@@ -75,7 +75,7 @@ export const JobOfferCard: React.FC<JobOfferCardProps> = ({ jobOffer }) => {
       <CardFooter className='flex justify-end border-t border-gray-100 pt-3 pb-4'>
         <Button
           variant='outline'
-          onClick={(e) => {
+          onClick={(e: React.MouseEvent) => {
             // Prevent card's onClick from firing if button itself is clicked,
             // though it achieves the same navigation.
             e.stopPropagation()

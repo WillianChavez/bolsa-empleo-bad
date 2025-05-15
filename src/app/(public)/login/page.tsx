@@ -1,6 +1,7 @@
 'use client' // Keep as client component if LoginForm itself needs client context or hooks passed from here, though LoginForm is already client.
 
 import { LoginForm } from '@/components/auth/login-form'
+import Link from 'next/link'; // Import Link
 // import { useSearchParams } from 'next/navigation'; // Optional: To get role from query param
 
 export default function LoginPage() {
@@ -19,7 +20,23 @@ export default function LoginPage() {
         {/* Example of using role for dynamic text, if implemented */}
         {/* <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">{pageTitle}</h2> */}
         <LoginForm />
+        <div className="mt-6 text-center text-sm text-gray-600">
+          <p>
+            ¿No tienes una cuenta?{' '}
+            <br />
+            <Link href="/register/applicant" className="font-medium text-blue-600 hover:text-blue-500 hover:underline">
+              Regístrate como postulante
+            </Link>
+            <br />
+            {' '}o{' '}
+            <br />
+            <Link href="/register/company" className="font-medium text-blue-600 hover:text-blue-500 hover:underline">
+              como empresa/RH
+            </Link>
+            .
+          </p>
+        </div>
       </div>
     </div>
   )
-}
+} 

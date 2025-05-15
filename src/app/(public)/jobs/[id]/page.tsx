@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import type { JobOfferViewModel } from '@/types' // Assuming full view model is okay for details
-import { fetchJobOffers } from '@/lib/mock-data' // We'll use this to find the specific job
+import { fetchJobOfferById } from '@/lib/mock-data' // We'll use this to find the specific job
 
 // Shadcn UI components for layout (can add more as needed)
 import {
@@ -47,8 +47,10 @@ export default function JobDetailPage() {
     const loadJobOfferDetails = async () => {
       setIsLoading(true)
       // In a real app, fetch a single job by ID: await fetch(`/api/jobs/${jobId}`)
-      const allOffers = await fetchJobOffers() // Using mock data
-      const foundOffer = allOffers.find((offer) => offer.id_puesto === jobId)
+      // const allOffers = await fetchJobOffers(); // Using mock data
+      // const foundOffer = allOffers.find((offer) => offer.id_puesto === jobId);
+      // Use the new fetchJobOfferById function
+      const foundOffer = await fetchJobOfferById(jobId)
       setJobOffer(foundOffer || null) // Set to null if not found
       setIsLoading(false)
       setIsApplied(false) // Reset applied state when loading new offer
@@ -155,7 +157,7 @@ export default function JobDetailPage() {
             </Badge>
             <Badge variant='secondary' className='px-3 py-1 text-sm'>
               <Briefcase className='mr-1.5 h-4 w-4' />{' '}
-              {jobOffer.modalidad.nombre_modalidad}
+              {jobOffer.modalidad_trabajo.nombre_modalidad}
             </Badge>
             {jobOffer.rango_salarial && (
               <Badge variant='secondary' className='px-3 py-1 text-sm'>
@@ -183,24 +185,24 @@ export default function JobDetailPage() {
 
           {/* Example: renderListItems(jobOffer.descripcion_completa, "Descripción Detallada") */}
           {renderListItems(
-            (jobOffer as any).descripcion || jobOffer.descripcion_corta,
+            jobOffer.descripcion_larga || jobOffer.descripcion_corta,
             'Descripción Completa'
           )}
-          {renderListItems((jobOffer as any).requisitos, 'Requisitos')}
+          {renderListItems(jobOffer.requisitos, 'Requisitos')}
           {renderListItems(
-            (jobOffer as any).conocimientos_requeridos,
+            jobOffer.conocimientos_requeridos,
             'Conocimientos Requeridos'
           )}
           {renderListItems(
-            (jobOffer as any).perfil_academico,
+            jobOffer.perfil_academico,
             'Perfil Académico'
           )}
           {renderListItems(
-            (jobOffer as any).habilidades_requeridas,
+            jobOffer.habilidades_requeridas,
             'Habilidades Requeridas'
           )}
           {renderListItems(
-            (jobOffer as any).experiencia_requerida,
+            jobOffer.experiencia_requerida,
             'Experiencia Requerida'
           )}
 
@@ -226,4 +228,4 @@ export default function JobDetailPage() {
       </Card>
     </div>
   )
-}
+} 

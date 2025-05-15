@@ -9,4 +9,4 @@ const CompanyRegisterPage = () => {
   )
 }
 
-export default CompanyRegisterPage
+export default CompanyRegisterPage 

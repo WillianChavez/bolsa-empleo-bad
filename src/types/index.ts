@@ -29,10 +29,20 @@ export interface PuestoTrabajo {
 export interface JobOfferViewModel {
   id_puesto: number
   nombre_puesto: string
-  descripcion_corta: string // A snippet of the full description
-  rango_salarial: string | null
-  ubicacion: string
-  empresa: Empresa // Nested company information
-  modalidad: ModalidadTrabajo // Nested modality information
-  // Add other fields as needed, e.g., fecha_publicacion
+  empresa: Empresa
+  descripcion_corta: string
+  modalidad_trabajo: ModalidadTrabajo
+  rango_salarial?: string
+  fecha_publicacion: string
+  fecha_limite_aplicacion: string
+
+  // Fields for JobOfferForm
+  descripcion_larga?: string
+  requisitos?: string
+  conocimientos_requeridos?: string
+  habilidades_requeridas?: string
+  experiencia_requerida?: string
+  perfil_academico?: string
+  ubicacion?: string
+  estado_oferta?: "Borrador" | "Activa" | "Pausada"
 }

@@ -81,6 +81,18 @@ Este proyecto es una plataforma de bolsa de trabajo desarrollada como parte de l
 - **Tipos Definidos:** Interfaces para `Empresa`, `ModalidadTrabajo`, `PuestoTrabajo`, `JobOfferViewModel` en `src/types/index.ts`.
 - **Datos Mock:** Función `fetchJobOffers` en `src/lib/mock-data.ts` para simular la obtención de datos de ofertas.
 
+### Panel de Administración (para Personal de RH - `/(admin)`)
+
+- **Ruta Base:** `/admin/*` (implementado como un [Route Group](https://nextjs.org/docs/app/building-your-application/routing/route-groups) `(admin)` para no afectar el path de la URL).
+- **Layout Específico:** Cuenta con un layout propio (`src/app/(admin)/layout.tsx`) que incluye:
+  - **Sidebar de Navegación:** Un componente `Sidebar` (`src/components/admin/sidebar.tsx`) fijo a la izquierda con enlaces a las diferentes secciones del panel de administración (ej. Dashboard, Gestión de Ofertas, Configuración).
+  - Logo de la aplicación en el sidebar.
+  - Indicador visual para el enlace activo.
+- **Página de Inicio del Panel (`/admin/dashboard`):**
+  - Muestra una bienvenida y tarjetas de resumen (placeholders para estadísticas como ofertas activas, nuevos postulantes, empresas registradas).
+  - Utiliza componentes `Card` de Shadcn UI.
+- **Propósito:** Permitir al personal de Recursos Humanos de la UES gestionar las ofertas de empleo, empresas, y otros aspectos relevantes de la bolsa de trabajo.
+
 ## Estructura del Proyecto
 
 El proyecto sigue la estructura recomendada para Next.js con el App Router:

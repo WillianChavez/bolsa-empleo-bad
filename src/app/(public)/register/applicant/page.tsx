@@ -9,4 +9,4 @@ const ApplicantRegisterPage = () => {
   )
 }
 
-export default ApplicantRegisterPage
+export default ApplicantRegisterPage 
